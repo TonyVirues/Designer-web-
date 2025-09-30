@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Compra, vende e intercambia cartas de Magic: The Gathering con facilidad en Cartones Mágicos." />
+  <meta name="keywords" content="Magic The Gathering, cartas, comprar, vender, intercambiar" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Cartones Mágicos</title>
+  <link rel="icon" href="Image/icono.png" type="image/png"/>
+</head>
+
+<!--Aqui comienza el body -->
+
+<body>
+
+<!--cabezera-->
+  <header class="py-3 text-center bg-dark text-white ">
+    <h1>Cartones Mágicos</h1>
+  </header>
+
+<!--menu nav donde inicio y lo otro esta separado-->
+  <nav class="navbar navbar-expand-lg sticky-top bg-success mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="Index.html"> <img src="Image/Iconoempresa.png" alt="empresa" width="60" height="54"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white  active" href="Productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Carro.html">Comprar</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Registro.html">Perfil</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="comunidad.html">Comunidad</a></li>
+        </ul>
+
+        <!--Buscador-->
+        <p></p>
+        <form class="d-flex ms-3" role="search">
+          <input id="filtro-cartas" class="form-control me-2" type="search" placeholder="Buscar cartas..." aria-label="Buscar">
+          <button class="btn btn-custom" type="submit">Buscar</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+<!-- Carrito flotante -->
+    <div id="carrito-flotante" class="bg-success text-white shadow rounded-circle d-flex align-items-center justify-content-center" onclick="window.location.href='Carro.html'">
+        <i class="bi bi-cart-fill fs-4"></i>
+        <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+    </div>
+<!--bienvenido-->
+    <main class="container-fluid py-5">
+        <div class="text-center">
+           <h1>Catálogo de cartas</h1> 
+           <hr>
+        </div>
+
+
+        <!--seccion de cartas destacadas-->
+        <section id="catalogo" class="container-fluid mb-5">
+            <!--<h2 class="text-center mb-4">Catálogo de Cartas</h2>-->
+
+            <div class="row justify-content-center">
+ 
+                <!--cuadrado intenrior que contine las cartas-->
+                <div class="col-md-5 mb-4 carta-item" data-nombre="sellers">
+                    <!--a partir de aqui mete las cartas-->
+                    <h3 class="ms-3 mt-4 mb-4">Best sellers</h3>
+                    
+                    <div class="card text-center mb-4">
+                        <div class="card-body d-flex justify-content-around flex-wrap gap-3">
+
+                            <!-- Mini-carta 1 -->
+                            <div class="mini-carta" style="width: 30%;">
+                                <img src="Image/jace.jpg" class="img-fluid mb-2" alt="Jace, the Mind Sculptor" />
+                                <h6 class="card-title">Jace, the Mind Sculptor</h6>
+                                <p class="card-text">Precio: 12.37€</p>
+                                <button class="btn btn-custom" onclick="agregarAlCarrito('Jace, the Mind Sculptor', 12.37, 'Image/jace.jpg')">Comprar</button>
+                            </div>
+
+                            <!-- Mini-carta 2 -->
+                            <div class="mini-carta" style="width: 30%;">
+                                <img src="Image/denprotector.jpg" class="img-fluid mb-2" alt="Den protector" />
+                                <h6 class="card-title">Den protecter</h6>
+                                <p class="card-text">Precio: 0.20€</p>
+                                <button class="btn btn-custom" onclick="agregarAlCarrito('Den protecter', 0.20, 'Image/denprotector.jpg')">Comprar</button>
+                            </div>
+
+                            <!-- Mini-carta 3 -->
+                            <div class="mini-carta" style="width: 30%;">
+                                <img src="Image/zhurta.jpg" class="img-fluid mb-2" alt="The Ur-Dragon Gold" />
+                                <h6 class="card-title">Zhur-Taa Druid</h6>
+                                <p class="card-text">Precio: 0.30€</p>
+                                <button class="btn btn-custom " onclick="agregarAlCarrito('Zhur-Taa Druid', 0.30, 'Image/zhurta.jpg')">Comprar</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--tabla de bestsellers-->
+                        <hr>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/swap.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Swap(V.2)</td>
+                                    <td id="precio">1.00€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Swap(V.2)" 
+                                            data-precio="1.00€"
+                                            data-imagen="Image/swap.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/Mycosynth.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>The Mycosynth Gardens</td>
+                                    <td id="precio">2.85€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="The Mycosynth Gardens" 
+                                            data-precio="2.85€"
+                                            data-imagen="Image/Mycosynth.jpg" 
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/inventory.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Liventory Management</td>
+                                    <td id="precio">0.80€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Liventory Management" 
+                                            data-precio="0.80€"
+                                            data-imagen="Image/inventory.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/solring.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Sol Ring</td>
+                                    <td id="precio">0.70€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Sol Ring" 
+                                            data-precio="0.70€"
+                                            data-imagen="Image/solring.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/cori.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Cori-Steel Cutter</td>
+                                    <td id="precio">11.00€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Cori-Steel Cutter" 
+                                            data-precio="11.00€"
+                                            data-imagen="Image/cori.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/ragavan.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Ragavan, Nimble Pilferer</td>
+                                    <td id="precio">23.99€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Ragavan, Nimble Pilferer" 
+                                            data-precio="23.99€"
+                                            data-imagen="Image/ragavan.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png"alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/gandalf.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Gandalf the White</td>
+                                    <td id="precio">4.87€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Gandalf the White" 
+                                            data-precio="4.87€"
+                                            data-imagen="Image/gandalf.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+                <!--caja de gangas-->
+                <div class="col-md-5 mb-4 carta-item" data-nombre="Gangas">
+                    <h3 class="ms-3 mt-4 mb-4">Mejores Gangas</h3>
+                    <!--a partir de aqui mete las cartas-->
+                    <div class="card text-center mb-4">
+                        <div class="card-body d-flex justify-content-around flex-wrap gap-3">
+
+                            <!-- Mini-carta 1 -->
+                            <div class="mini-carta" style="width: 30%;">
+                                <img src="Image/carnicero.jpg" class="img-fluid mb-2" alt="Thrakkus the Butcher" />
+                                <h6 class="card-title">Thrakkus the Butcher</h6>
+                                <p class="card-text">Precio: 0.05€</p>
+                                <button class="btn btn-custom" onclick="agregarAlCarrito('Thrakkus the Butcher', 0.05, 'Image/carnicero.jpg')">Comprar</button>
+                            </div>
+
+                            <!-- Mini-carta 2 -->
+                            <div class="mini-carta" style="width: 30%;">
+                                <img src="Image/marneus.jpg" class="img-fluid mb-2" alt="Marneus Calgar" />
+                                <h6 class="card-title">Marneus Calgar</h6>
+                                <p class="card-text">Precio: 20€</p>
+                                <button class="btn btn-custom" onclick="agregarAlCarrito('Marneus Calgar', 20, 'Image/marneus.jpg')">Comprar</button>
+                            </div>
+
+                            <!-- Mini-carta 3 -->
+                            <div class="mini-carta" style="width: 30%;">
+                                <img src="Image/narset.jpg" class="img-fluid mb-2" alt="Narset, Enlightened Exile" />
+                                <h6 class="card-title">Narset, Enlightened Exile</h6>
+                                <p class="card-text">Precio: 3€</p>
+                                <button class="btn btn-custom" onclick="agregarAlCarrito('Narset, Enlightened Exile', 3, 'Image/narset.jpg')">Comprar</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!--tabla de bestsellers-->
+                        
+                        <hr>
+                        <table class="table table-striped">
+
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/winds.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Winds of Abandon</td>
+                                    <td id="precio">4.00€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Winds of Abandon" 
+                                            data-precio="4.00€"
+                                            data-imagen="Image/winds.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/thunder.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Thundertrap Trainer </td>
+                                    <td id="precio">5.25€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Thundertrap Trainer " 
+                                            data-precio="5.25€"
+                                            data-imagen="Image/thunder.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/primal.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Primal Vigor</td>
+                                    <td id="precio">5.34€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Primal Vigor" 
+                                            data-precio="5.34"
+                                            data-imagen="Image/primal.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/clock.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Unwinding Clock</td>
+                                    <td id="precio">7.12€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Unwinding Clock" 
+                                            data-precio="7.12€"
+                                            data-imagen="Image/clock.jpg" 
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/triunfo.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Triumph of the Hordes</td>
+                                    <td id="precio">11.44€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Triumph of the Hordes" 
+                                            data-precio="11.44€"
+                                            data-imagen="Image/triunfo.jpg" 
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png" alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/marsh.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Marsh Flats</td>
+                                    <td id="precio">26.40€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Marsh Flats" 
+                                            data-precio="23.40€"
+                                            data-imagen="Image/marsh.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>
+                                        <div class="icon-container" style="position: relative; display: inline-block;">
+                                            <img src="Image/photo.png"alt="photo" width="30" height="30">
+                                            <div class="hover-card">
+                                                <div class="swap" width="100" height="100">
+                                                    <img src="Image/choco.jpg"class="img-fluid mb-2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Choco, Seeker of Paradise</td>
+                                    <td id="precio">5.99€</td>
+                                    <td>
+                                        <i class="bi bi-cart2 carrito-icono" 
+                                            data-nombre="Choco, Seeker of Paradise" 
+                                            data-precio="5.99€"
+                                            data-imagen="Image/choco.jpg"
+                                            style="cursor: pointer;">
+                                        </i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </section>
+
+<!--Productos-->
+        <section id="productos" class="container-fluid mb-5 ms-3">
+                <h2 class="text-center">Otros productos</h2>
+                <hr>
+            
+                <div class="row justify-content-center mt-4"> <!--permite que esten uno al lado de otro-->
+                    
+                    <div class="col-md-4 mb-4 " data-nombre="sobres">
+                        <div class="card text-center">
+                            <img src="Image/sobre-removebg-preview.png" class="card-img-p" alt="sobres" />
+                            <div class="card-body">
+                                <h3 class="card-title">Sobres</h3>
+                                <button class="btn btn-custom">Verlo todo</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4"> <!--ojo que esta esta diferente-->
+                        <div class="card text-center">
+                            <img src="Image/cajas_de_sobre-removebg-preview.png" class="card-img-p" alt="cajas" />
+                            <div class="card-body">
+                            <h3 class="card-title">Cajas de sobres</h3>
+                            <button class="btn btn-custom">Verlo todo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 " data-nombre="commander">
+                        <div class="card text-center">
+                           <!--<h3 class="ms-3 mt-4 mb-4"></h3> dejalo para tener una referencia-->
+                            <img src="Image/commander.png" class="card-img-p" alt="fundas" />
+                            <div class="card-body">
+                                <h3 class="card-title">Commander</h3>
+                                <button class="btn btn-custom">Verlo todo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+<!--mensaje para guardar en carrito-->
+    <div id="toast-container" style=" position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px;">
+    </div>
+
+  <!--pie de pagina-->
+  <footer class="text-white text-center bg-dark py-3">
+        <div id="contacto" class="text-center">
+      <h2>Contacto</h2>
+      <p>Email: soporte@cartonesmagicos.com</p>
+      <p>&copy; 2025 Magic Market - Todos los derechos reservados</p>
+    </div>
+  
+  </footer>
+
+
+  <!--Enlace de javascript-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="javascrip/javas.js"></script>
+</body>
+
+</html>

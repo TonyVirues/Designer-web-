@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Compra, vende e intercambia cartas de Magic: The Gathering con facilidad en Cartones Mágicos." />
+  <meta name="keywords" content="Magic The Gathering, cartas, comprar, vender, intercambiar" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Cartones Mágicos</title>
+  <link rel="icon" href="Image/icono.png" type="image/png"/>
+</head>
+
+<!--Aqui comienza el body -->
+
+<body>
+
+<!--cabezera-->
+  <header class="py-3 text-center bg-dark text-white ">
+    <h1>Cartones Mágicos</h1>
+  </header>
+
+<!--menu nav donde inicio y lo otro esta separado-->
+  <nav class="navbar navbar-expand-lg sticky-top bg-success mb-4">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand text-white" href="Index.html"><img src="Image/Iconoempresa.png" class="btn p-0" alt="empresa" width="60" height="54"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="Productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Carro.html">Comprar</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Registro.html">Perfil</a></li>
+          <li class="nav-item"><a class="nav-link text-white active" href="comunidad.html">Comunidad</a></li>
+        </ul>
+
+        <!--Buscador-->
+        <p></p>
+        <form class="d-flex ms-3" role="search">
+          <input id="filtro-cartas" class="form-control me-2" type="search" placeholder="Buscar cartas..." aria-label="Buscar">
+          <button class="btn btn-custom" type="submit">Buscar</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+<!-- Carrito flotante -->
+  <div id="carrito-flotante" class="bg-success text-white shadow rounded-circle d-flex align-items-center justify-content-center" onclick="window.location.href='Carro.html'">
+          <i class="bi bi-cart-fill fs-4"></i>
+          <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+  </div>
+
+  
+<!--Bienvenido-->
+    <main class="container-fluid py-5">
+        <div class="text-center">
+           <h1>Usuarios registrados</h1> 
+           <hr>
+        </div>
+
+<!-- Tabla -->
+        <table id="usuarios" class="table table-striped table-bordered">
+            <thead class="table-success">
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo de Vendedor</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>👤 David</td>
+                <td>Empresa</td>
+            </tr>
+            <tr>
+                <td>👤 Salvador</td>
+                <td>Personal</td>
+            </tr>
+            <tr>
+                <td>👤 Alonso</td>
+                <td>Tienda</td>
+            </tr>
+            <tr>
+                <td>👤 Mar</td>
+                <td>personal</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+      
+    </main>
+
+    <!--pie de pagina-->
+  <footer class="text-white text-center bg-dark py-3">
+        <div id="contacto" class="text-center">
+      <h2>Contacto</h2>
+      <p>Email: soporte@cartonesmagicos.com</p>
+      <p>&copy; 2025 Magic Market - Todos los derechos reservados</p>
+    </div>
+  
+  </footer>
+
+
+  <!--Enlace de javascript-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="javascrip/javas.js"></script>
+<!--javascript de tabla aqui, porque me explota el carro-->
+    <script>
+        
+        $(document).ready(function () {
+        tabla = $('#usuarios').DataTable({
+        language: {
+            search: "", // Oculta el buscador interno
+            zeroRecords: "No se encontraron usuarios",
+            lengthMenu: "Mostrar _MENU_ usuarios por página",
+            info: "Mostrando _START_ a _END_ de _TOTAL_ usuarios",
+            paginate: {
+            previous: "Anterior",
+            next: "Siguiente"
+            }
+        }
+        });
+
+        // Buscador personalizado
+        $('#buscar-btn').on('click', function () {
+        const valor = $('#custom-search').val();
+        tabla.search(valor).draw();
+        });
+
+        // También buscar al presionar Enter
+        $('#custom-search').on('keypress', function (e) {
+        if (e.which === 13) {
+            $('#buscar-btn').click();
+        }
+        });
+    });
+    </script>
+</body>
+
+</html>

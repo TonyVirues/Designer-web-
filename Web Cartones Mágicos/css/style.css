@@ -1,0 +1,414 @@
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+h1, h2, h3 {
+  color: #f2a900;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*<----FOOTER---->*/
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+}
+
+/*<------MENU NAVEGACION----->*/
+
+nav.navbar {
+  background-color: #2ba84a; /*cambiar el color*/
+}
+.nav-link{
+    border-radius: 45px;
+}
+.navbar-brand{
+  border-radius: 45px;
+  transition: transform 0.3s ease;
+}
+.navbar-brand:hover{
+transform: scale(1.6) rotate(-2deg);
+}
+.nav-brand:active{
+  transform: scale(0.95);
+}
+.nav-link:hover{
+    background-color: hsl(35, 100%, 65%);
+    color: #000000 !important;
+}
+.nav-link.active {
+    color: #f2a900 !important;
+}
+.nav-link.active:hover{
+    background-color: hsl(35, 100%, 65%);
+    color: #000000 !important;
+}
+
+/*<----editar los botones personalizados----->*/
+.btn-custom {
+  background-color: #f2a900;
+  color: black;
+}
+
+.btn-custom:hover {
+  background-color: #d18a00;
+}
+
+
+/*carrusel catalogo*/
+.carousel-inner img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/*<-----Catalogo de cartas----->*/
+.card { /*caja que contiene la carta*/
+  background-color: #222;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  
+}
+.card-img-top {
+  padding-top: 20px;
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+.mini-carta:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px #d18a00 !important;
+  border-radius: 10px;
+}
+
+/*<----Fichero PRODUCTO---->
+/*tamaño imagen pestaña productos*/
+.card-img-p {
+  max-height: 400px;
+  object-fit: contain;
+}
+
+
+/*fotos de icono photo*/
+
+.icon-container:hover .hover-card {
+  display: block;
+}
+.hover-card {
+  display: inline-block;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  display: none;
+  top: 0;
+  left: 50px;
+  z-index: 10;
+  padding: 4px;
+}
+/*hover del carrito de la lista de productos*/
+.bi-cart2:hover {
+    background-color: hsl(35, 100%, 65%)!important;
+    color: #000000 !important;
+    border-radius: 45px;
+    
+}
+/*<----Fin fichero Productos---->
+
+
+/*<----fichero REGISTRO----->*/
+
+/*Pestañas*/
+.nav-tabs{
+  border: 2px solid transparent;
+  
+}
+.nav-tabs .nav-link{
+  border-radius: 0; /* cuadradas */
+  transition: all 0.3s ease;
+  opacity: 1;
+  border-bottom: none !important;
+}
+.nav-tabs .nav-link.active{
+  border-radius: 0; /* cuadradas */
+  transition: all 0.3s ease;
+  border-bottom: none !important;
+  background-color: #212121;
+  border-color: #2ba84a;
+}
+.nav-tabs .nav-link:hover{
+    background-color: hsl(35, 100%, 65%)!important;
+    color: #000000 !important;
+    border-radius: 45px;
+}
+
+.nav-tabs .nav-link.active:hover{
+    background-color: hsl(35, 100%, 65%)!important;
+    color: #000000 !important;
+    border-radius: 45px;
+}
+
+
+/*Formulario bonito*/
+
+.form-container {
+  width: 400px;
+  background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(145deg, transparent 35%,#1cff4d78, #56ff40ef) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+#btnenviar:hover {
+  scale: 1.03;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffffef; /*#56ff40ef*/
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-submit-btn:hover {
+  background-color: #fff;
+  border-color: #fff;
+}
+.contact-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+.contact-form .form-label {
+  font-weight: bold;
+}
+
+/*hover del carrito de la compra*/
+.mini-img-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.mini-img-hover img.carrito-img {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+
+.hover-ampliada {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  z-index: 10;
+  padding: 4px;
+}
+
+.hover-ampliada img {
+  width: 200px;
+  height: auto;
+}
+
+.mini-img-hover:hover .hover-ampliada {
+  display: block;
+}
+
+/*carrito flotante*/
+#carrito-flotante {
+  position: sticky;
+  top: 100px; 
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: 20px;
+  z-index: 1030; 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#contador-carrito {
+  font-size: 0.75rem;
+}
+
+
+#carrito-flotante:hover {
+  transform: scale(1.1);
+}
+
+#contador-carrito {
+  font-size: 0.75rem;
+}
+
+
+/*contenedor de expansiones*/
+.hover-img-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+}
+
+.hover-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hover-img-container:hover img {
+  transform: scale(1.1);
+}
+
+.hover-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+background-color: #000000;
+  color: white;
+  padding: 15px;
+  opacity: 0;
+}
+
+.hover-img-container:hover .hover-text {
+  opacity: 1;
+}
+
+.row > .col-md-4.d-flex {
+  display: flex;
+}
+
+.card.flex-fill {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: 100%;
+}
+
+.card-body.mt-auto {
+  margin-top: auto;
+}
+
+/*redes sociales*/
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #454242;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+
+

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Compra, vende e intercambia cartas de Magic: The Gathering con facilidad en Cartones Mágicos." />
+  <meta name="keywords" content="Magic The Gathering, cartas, comprar, vender, intercambiar" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Cartones Mágicos</title>
+  <link rel="icon" href="Image/icono.png" type="image/png"/>
+</head>
+
+<!--Aqui comienza el body -->
+
+<body>
+
+  <!--cabezera-->
+  <header class="py-3 text-center bg-dark text-white ">
+    <h1>Cartones Mágicos</h1>
+  </header>
+
+  <!--menu nav donde inicio y lo otro esta separado-->
+  <nav class="navbar navbar-expand-lg sticky-top bg-success mb-4">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand text-white" href="Index.html"><img src="Image/Iconoempresa.png" class="btn p-0" alt="empresa" width="60" height="54"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="Productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Carro.html">Comprar</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Registro.html">Perfil</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="comunidad.html">Comunidad</a></li>
+        </ul>
+
+        <!--Buscador-->
+        <p></p>
+        <form class="d-flex ms-3" role="search">
+          <input id="filtro-cartas" class="form-control me-2" type="search" placeholder="Buscar cartas..." aria-label="Buscar">
+          <button class="btn btn-custom" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Carrito flotante -->
+        <div id="carrito-flotante" class="bg-success text-white shadow rounded-circle d-flex align-items-center justify-content-center" onclick="window.location.href='Carro.html'">
+          <i class="bi bi-cart-fill fs-4"></i>
+          <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </div>
+
+
+  
+  <!--Bienvenido-->
+  <main class="container-fluid py-5">
+    <section id="inicio" class="text-center mb-5">
+      <h2>Bienvenido a Cartones Mágicos</h2>
+      <p>Compra, vende e intercambia cartas de Magic: The Gathering con facilidad.</p>
+      <!--Buscador que ya no-->
+    </section>
+
+    <!--carrusel de relleno el inicio con publi-->
+      <section id="myCarousel" class="carousel slide ms-auto position-relative" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="Image/DjCp33eWsAEJv2j.jpg" class="d-block w-100" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Registrate para más</h1>
+                <p>Compra y vende de la forma mas segura</p>
+                <p><a class="btn btn-lg btn-success" href="Registro.html">Registro</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="Image/multiplescartas.png" class="d-block w-100" alt="Second slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Miles de cartas</h1>
+                <p>Cientos de cartas nuevas gracias a la comunidad</p>
+                <p><a class="btn btn-lg btn-success" href="#comunidad">Comunidad</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="Image/finalfantasy.jpg" class="d-block w-100"  alt="Third slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Novedad</h1>
+                <p>Últimas novedades</p>
+                <p><a class="btn btn-lg btn-success" href="Productos.html">Productos</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" id="tarkir">
+            <img src="Image/tarkir.jpg" class="d-block w-100" alt="Third slide">
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>Tarkir: Dragonstorm</h1>
+                <p>LLega a nosotros</p>
+                <p><a class="btn btn-lg btn-success" href="#catalogo">Cátalogo</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </section>
+      <p class="mt-4 mb-4"></p>
+<!--aqui empieza el catalo inicio-->
+        <h2 class="text-center mb-4">Las cartas más top</h2>
+        <hr>
+      <section id="catalogo" class="container mb-5">
+            <div class="row justify-content-center">
+                  <div class="col-md-4 mb-4 carta-item" data-nombre="The Ur-Dragon">
+                      <div class="card text-center">
+                          <img src="Image/urdragon.jpg" class="card-img-top" alt="The Ur-Dragon" />
+                          <div class="card-body">
+                            <h3 class="card-title">The Ur-Dragon</h3>
+                            <p class="card-text">Precio: 15€</p>
+                            <button class="btn btn-custom" onclick="agregarAlCarrito('The Ur-Dragon', 45, 'Image/urdragon.jpg')">Comprar</button>
+                          </div>
+                      </div>
+                  </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <img src="Image/tdm-300-dracogenesis.jpg" class="card-img-top" alt="Dracogenesis" />
+                        <div class="card-body">
+                          <h3 class="card-title">Dracogenesis</h3>
+                          <p class="card-text">Precio: 60€</p>
+                          <button class="btn btn-custom" onclick="agregarAlCarrito('Dracogenesis', 60, 'Image/tdm-300-dracogenesis.jpg')">Comprar</button>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <img src="Image/ulamog.jpg" class="card-img-top" alt="Ulamog, the Defiler" />
+                        <div class="card-body">
+                          <h3 class="card-title">Ulamog, the Defiler</h3>
+                          <p class="card-text">Precio: 100€</p>
+                          <button class="btn btn-custom" onclick="agregarAlCarrito('Ulamog, the Defiler', 100, 'Image/ulamog.jpg')">Comprar</button>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+      </section>
+
+<!--expansiones-->
+      <section id="productos" class="container-fluid mb-5 ms-3">
+              <h2 class="text-center">Expansiones</h2>
+              <hr>
+
+              <div class="row justify-content-center mt-4">
+                <div class="col-md-4 mb-4 d-flex">
+                  <div class="card text-center flex-fill d-flex flex-column">
+                    <div class="hover-img-container">
+                      <img src="Image/master.jpg" alt="Carta mágica" class="img-fluid w-75">
+                      <div class="hover-text">
+                        <h4>Commander Master 3</h4>
+                        <button class="btn btn-custom " onclick="window.location.href='Productos.html'">Ver mas</button>
+                      </div>
+                    </div>
+                    <div class="card-body mt-auto">
+                      <!-- Si quieres texto debajo de la imagen, aquí va -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-4 d-flex">
+                  <div class="card text-center flex-fill d-flex flex-column">
+                    <div class="hover-img-container">
+                      <img src="Image/Bloomburrow.jpg" alt="Carta mágica" class="img-fluid w-75">
+                      <div class="hover-text">
+                        <h4>Bloomburrow</h4>
+                        <button class="btn btn-custom"onclick="window.location.href='Productos.html'">Ver mas</button>
+                      </div>
+                    </div>
+                    <div class="card-body mt-auto"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-4 d-flex">
+                  <div class="card text-center flex-fill d-flex flex-column">
+                    <div class="hover-img-container">
+                      <img src="Image/horizontes.png" alt="Carta mágica" class="img-fluid w-75">
+                      <div class="hover-text">
+                        <h4>Horizon modern 3</h4>
+                        <button class="btn btn-custom" onclick="window.location.href='Productos.html'">Ver mas</button>
+                      </div>
+                    </div>
+                    <div class="card-body mt-auto"></div>
+                  </div>
+                </div>
+              </div>
+      </section>
+
+<!--redes sociales-->
+      <section id="redessociales">
+        <div class="container-fluid text-center">
+          <ul class="wrapper">
+            <li class="icon twitter">
+              <a href="https://x.com/home?lang=es" target="_blank" style="color: inherit; text-decoration: none;">
+                <span class="tooltip">Twitter</span>
+                <svg
+                  height="1.8em"
+                  fill="currentColor"
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="twitter"
+                >
+                  <path
+                    d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"
+                  ></path>
+                </svg>
+
+              </a>
+            </li>
+            <li class="icon instagram">
+              <a href="https://www.instagram.com/" target="_blank" style="color: inherit; text-decoration: none;">
+                <span class="tooltip">Instagram</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1.2em"
+                  fill="currentColor"
+                  class="bi bi-instagram"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                  ></path>
+                </svg>
+
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+<!---->
+  </main>
+<!--mensaje para guardar en carrito-->
+    <div id="toast-container" style=" position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px;">
+    </div>
+  <!--pie de pagina-->
+  <footer class="text-white text-center bg-dark py-3">
+        <div id="contacto" class="text-center">
+      <h2>Contacto</h2>
+      <p>Email: soporte@cartonesmagicos.com</p>
+      <p>&copy; 2025 Magic Market - Todos los derechos reservados</p>
+    </div>
+  
+  </footer>
+
+
+  <!--Enlace de javascript-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="javascrip/javas.js"></script>
+
+</body>
+
+</html>
